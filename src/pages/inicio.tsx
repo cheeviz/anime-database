@@ -7,12 +7,14 @@ export interface AnimesProps {
   mal_id: string;
   title: string;
   url: string;
-  episodes: number,
-  synopsis: string,
-  airing: boolean,
-  genres: {
-    name: string,
-  }
+  episodes: number;
+  synopsis: string;
+  airing: boolean;
+  genres: [
+    {
+      name: string;
+    }
+  ];
 
   images: {
     jpg: {
