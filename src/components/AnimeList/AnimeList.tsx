@@ -1,10 +1,10 @@
-import { AnimeCard } from "./components/AnimeCard";
+import { AnimeCard } from "../AnimeCard";
 import * as S from "./styled";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { AnimeDetails } from "../AnimeDetails/AnimeDetails";
+import { AnimeDetails } from "../AnimeDetails";
 import { useState } from "react";
 
 export function AnimeList({ Animes }: any) {
@@ -32,11 +32,7 @@ export function AnimeList({ Animes }: any) {
 
   return (
     <S.Container>
-      <AnimeDetails
-        show={showModal}
-        handleClose={handleCloseModal}
-        itemId={clickedItemId}
-      />
+      <AnimeDetails show={showModal} handleClose={handleCloseModal} itemId={clickedItemId} />
       <Slider {...settings}>
         {Animes.map((item: any, index: any) => (
           <S.Container key={index}>

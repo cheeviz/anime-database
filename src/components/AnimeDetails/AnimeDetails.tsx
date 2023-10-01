@@ -40,11 +40,15 @@ export function AnimeDetails({ show, handleClose, itemId }: Props) {
   const studios = animeData.studios.map((item: any) => item.name).join(", ");
   const genres = animeData.genres.map((item: any) => item.name).join(", ");
 
+  const modalAnimationClass = show
+    ? "modal-container transform transition-transform ease-out duration-300 scale-100"
+    : "scale-0";
+
   return (
     <S.Container $isShow={show}>
       <S.FundoBlur />
 
-      <S.Box>
+      <S.Box className={`${modalAnimationClass}`}>
         <S.Conteudo>
           <S.ConteudoBox>
             <S.Image src={animeData.images.jpg.image_url} alt={animeData.title} />
